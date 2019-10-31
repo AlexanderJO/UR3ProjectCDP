@@ -11,7 +11,6 @@ int main (int argc, char* argv[])
     {
         ret = CDPMain.Start();
         printf("Good Bye!\n");
-        //Test
     }
     else
         CDPMain.PrintHelp();
