@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="CDPBaseMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>951</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>900</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1920</width>
+    <height>1080</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Main Window</string>
+  </property>
+  <property name="msgBoxBgSvg">
+   <string>:/themes/flat_gray_light/backgrounds/bgMsgBox.svg</string>
+  </property>
+  <property name="msgBoxBtnSvg">
+   <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+  </property>
+  <property name="themeNight">
+   <string>flat_gray</string>
+  </property>
+  <property name="themeDay">
+   <string>flat_gray_light</string>
+  </property>
+  <property name="numPadName" stdset="0">
+   <string>CDPBaseNumPad</string>
+  </property>
+  <property name="keyPadName" stdset="0">
+   <string>CDPBaseKeyPad</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>951</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="header">
+     <item>
+      <widget class="CDPBaseLabel" name="projectLabel">
+       <property name="text">
+        <string>UR 3 Project - Tic Tac Toe</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDPBaseLabel" name="groupLabel">
+       <property name="text">
+        <string>Gruppe 6</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>40</y>
+      <width>161</width>
+      <height>47</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="timer">
+     <item>
+      <widget class="CDPBaseLabel" name="roundTimeLabel">
+       <property name="text">
+        <string>Round time:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="CDPBaseClockDigi" name="roundTimeClock">
+       <property name="maximumDateTime">
+        <datetime>
+         <hour>23</hour>
+         <minute>59</minute>
+         <second>59</second>
+         <year>1970</year>
+         <month>1</month>
+         <day>1</day>
+        </datetime>
+       </property>
+       <property name="minimumDateTime">
+        <datetime>
+         <hour>0</hour>
+         <minute>0</minute>
+         <second>0</second>
+         <year>1970</year>
+         <month>1</month>
+         <day>1</day>
+        </datetime>
+       </property>
+       <property name="cdpClockSource">
+        <enum>CDPBaseClockDigi::CDPClock</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="CDPBaseButton" name="button">
+    <property name="geometry">
+     <rect>
+      <x>801</x>
+      <y>100</y>
+      <width>150</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
+    <property name="svgFile">
+     <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+    </property>
+    <property name="pushRoutables" stdset="0">
+     <stringlist>
+      <string>cdpPressedRouting</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>200</y>
+      <width>551</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>501</width>
+       <height>501</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="squareField">
+      <item row="0" column="0">
+       <widget class="CDPBaseLamp" name="square1x1">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="CDPBaseLamp" name="square3x1">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="CDPBaseLamp" name="square3x2">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="CDPBaseLamp" name="square1x2">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="CDPBaseLamp" name="square1x3">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="CDPBaseLamp" name="square2x3">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="CDPBaseLamp" name="square2x2">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="CDPBaseLamp" name="square2x1">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="CDPBaseLamp" name="square3x3">
+        <property name="svgType" stdset="0">
+         <enum>CDPBaseLamp::Custom</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="CDPBaseButton" name="button_2">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>760</y>
+      <width>150</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>20</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Start</string>
+    </property>
+    <property name="svgFile">
+     <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+    </property>
+    <property name="pushRoutables" stdset="0">
+     <stringlist>
+      <string>cdpPressedRouting</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>800</y>
+      <width>331</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="inidcators">
+     <item>
+      <layout class="QVBoxLayout" name="runningIndication">
+       <item>
+        <widget class="CDPBaseLabel" name="runningLabel">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Running</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLamp" name="runningLamp">
+         <property name="svgType" stdset="0">
+          <enum>CDPBaseLamp::Ring</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="idleIndication">
+       <item>
+        <widget class="CDPBaseLabel" name="idleLabel">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Idle</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLamp" name="idleLamp">
+         <property name="svgType" stdset="0">
+          <enum>CDPBaseLamp::Ring</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="warningIndication">
+       <item>
+        <widget class="CDPBaseLabel" name="warningLabel">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Warning</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLamp" name="warningLamp">
+         <property name="svgType" stdset="0">
+          <enum>CDPBaseLamp::Ring</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="alarmIndication">
+       <item>
+        <widget class="CDPBaseLabel" name="alarmLabel">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Alarm</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLamp" name="alarmLamp">
+         <property name="svgType" stdset="0">
+          <enum>CDPBaseLamp::Ring</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="emStopIndication">
+       <item>
+        <widget class="CDPBaseLabel" name="emStopLabel">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>8</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Em. Stop</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLamp" name="emStopLamp">
+         <property name="svgType" stdset="0">
+          <enum>CDPBaseLamp::Ring</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>100</y>
+      <width>351</width>
+      <height>249</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="CDPBaseLabel" name="setupLabel">
+       <property name="text">
+        <string>Please select game setup</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="playerMode">
+         <property name="spacing">
+          <number>10</number>
+         </property>
+         <item>
+          <widget class="CDPBaseLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Player interaction</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDPBaseButtonMsg" name="player1vsRobot1">
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Player vs. Robot 1</string>
+           </property>
+           <property name="svgFile">
+            <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+           </property>
+           <property name="pushRoutables" stdset="0">
+            <stringlist>
+             <string>cdpPressedRouting</string>
+             <string>cdpRouting</string>
+            </stringlist>
+           </property>
+           <property name="cdpProperty" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDPBaseButtonMsg" name="player1vsRobot2">
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Player vs. Robot 2</string>
+           </property>
+           <property name="svgFile">
+            <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+           </property>
+           <property name="pushRoutables" stdset="0">
+            <stringlist>
+             <string>cdpPressedRouting</string>
+             <string>cdpRouting</string>
+            </stringlist>
+           </property>
+           <property name="cdpProperty" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDPBaseButtonMsg" name="Robot1vsRobot2">
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Robot 1 vs. Robot 2</string>
+           </property>
+           <property name="svgFile">
+            <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+           </property>
+           <property name="pushRoutables" stdset="0">
+            <stringlist>
+             <string>cdpPressedRouting</string>
+             <string>cdpRouting</string>
+            </stringlist>
+           </property>
+           <property name="cdpProperty" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="difficultyMode">
+         <item>
+          <widget class="CDPBaseLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Difficulty</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDPBaseButtonMsg" name="impossibleMode">
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Impossible</string>
+           </property>
+           <property name="svgFile">
+            <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+           </property>
+           <property name="pushRoutables" stdset="0">
+            <stringlist>
+             <string>cdpPressedRouting</string>
+             <string>cdpRouting</string>
+            </stringlist>
+           </property>
+           <property name="cdpProperty" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDPBaseButtonMsg" name="hardMode">
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Hardmode</string>
+           </property>
+           <property name="svgFile">
+            <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+           </property>
+           <property name="pushRoutables" stdset="0">
+            <stringlist>
+             <string>cdpPressedRouting</string>
+             <string>cdpRouting</string>
+            </stringlist>
+           </property>
+           <property name="cdpProperty" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="CDPBaseButtonMsg" name="easyMode">
+           <property name="font">
+            <font>
+             <family>Cambria</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Easymode</string>
+           </property>
+           <property name="svgFile">
+            <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+           </property>
+           <property name="pushRoutables" stdset="0">
+            <stringlist>
+             <string>cdpPressedRouting</string>
+             <string>cdpRouting</string>
+            </stringlist>
+           </property>
+           <property name="cdpProperty" stdset="0">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>370</y>
+      <width>261</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="scores">
+     <item>
+      <widget class="CDPBaseLabel" name="label"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="playerScore">
+       <item>
+        <widget class="CDPBaseLabel" name="playerScoreLabel">
+         <property name="text">
+          <string>Player score:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLabel" name="playerScoreVariable"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="robot1Score">
+       <item>
+        <widget class="CDPBaseLabel" name="robot1ScoreLabel">
+         <property name="text">
+          <string>Robot 1 score:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLabel" name="robot1ScoreVariable"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="robot3Score">
+       <item>
+        <widget class="CDPBaseLabel" name="robot3ScoreLabel">
+         <property name="text">
+          <string>Robot 2 score:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="CDPBaseLabel" name="robot3ScoreVariable"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CDPBaseButton</class>
+   <extends>QPushButton</extends>
+   <header>CDPBaseWidgets/CDPBaseButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseButtonMsg</class>
+   <extends>CDPBaseButton</extends>
+   <header>CDPBaseWidgets/CDPBaseButtonMsg.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseLabel</class>
+   <extends>QLabel</extends>
+   <header>CDPBaseWidgets/CDPBaseLabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseClockDigi</class>
+   <extends>QDateTimeEdit</extends>
+   <header>CDPBaseWidgets/CDPBaseClockDigi.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBasePicture</class>
+   <extends>QWidget</extends>
+   <header>CDPBaseWidgets/CDPBasePicture.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBasePictureSequence</class>
+   <extends>CDPBasePicture</extends>
+   <header>CDPBaseWidgets/CDPBasePictureSequence.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseLamp</class>
+   <extends>CDPBasePictureSequence</extends>
+   <header>CDPBaseWidgets/CDPBaseLamp.h</header>
+  </customwidget>
+  <customwidget>
+   <class>CDPBaseMainWindow</class>
+   <extends>QMainWindow</extends>
+   <header>CDPBaseWidgets/CDPBaseMainWindow.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
