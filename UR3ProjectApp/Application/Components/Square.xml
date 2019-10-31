@@ -1,0 +1,21 @@
+<Component Model='UR3Lib.Square' Name='Square' src='Components/Square.xml' Description="A component for highlighting squares in a Tic-Tac-Toe game.&amp;#xd;&amp;#xa;Squares are either unselected, selected by player 1 or player 2.&amp;#xd;&amp;#xa;Each selection is color coded.">
+  <fs>5</fs>
+
+  <Signals>
+    <Signal Description="Process run time each s." Input="0" Model="CDPSignal&lt;double&gt;" Name="Process Timer" Type="double" Unit="s/s"></Signal>
+    <Signal Description="Process interval [s]." Input="0" Model="CDPSignal&lt;double&gt;" Name="Process Period" Type="double" Unit="s"></Signal>
+    <Signal Input="0" Model="CDPSignal&lt;bool&gt;" Name="Player1Selected" Type="bool"></Signal>
+    <Signal Input="0" Model="CDPSignal&lt;bool&gt;" Name="Unselected" Type="bool"></Signal>
+    <Signal Input="0" Model="CDPSignal&lt;bool&gt;" Name="Player2Selected" Type="bool"></Signal>
+    <Signal Description="Is set to high when start is wanted" Input="0" Model="CDPSignal&lt;bool&gt;" Name="startWanted" Type="bool"></Signal>
+    <Signal Input="0" Model="CDPSignal&lt;double&gt;" Name="time" Type="double"></Signal>
+  </Signals>
+
+  <Alarms>
+    <Alarm Description="A component was suspended!" Name="Component Suspended" Text="Component was suspended!"></Alarm>
+  </Alarms>
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+  </Timers>
+</Component>

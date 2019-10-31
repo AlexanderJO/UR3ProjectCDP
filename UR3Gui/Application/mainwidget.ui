@@ -170,6 +170,15 @@
      <layout class="QGridLayout" name="squareField">
       <item row="0" column="0">
        <widget class="CDPBaseLamp" name="square1x1">
+        <property name="widgetStyle" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="cdpStyleRouting" stdset="0">
+         <string/>
+        </property>
+        <property name="widgetPicture" stdset="0">
+         <number>0</number>
+        </property>
         <property name="svgType" stdset="0">
          <enum>CDPBaseLamp::Custom</enum>
         </property>
@@ -517,6 +526,9 @@
        </item>
        <item>
         <layout class="QVBoxLayout" name="difficultyMode">
+         <property name="spacing">
+          <number>10</number>
+         </property>
          <item>
           <widget class="CDPBaseLabel" name="label_2">
            <property name="font">
@@ -544,6 +556,9 @@
            </property>
            <property name="text">
             <string>Impossible</string>
+           </property>
+           <property name="widgetStyle" stdset="0">
+            <number>0</number>
            </property>
            <property name="svgFile">
             <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
@@ -676,9 +691,85 @@
      </item>
     </layout>
    </widget>
+   <widget class="CDPBaseStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>70</y>
+      <width>101</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>2</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="CDPBasePicture" name="picture">
+        <property name="cdpVisibleRouting">
+         <string/>
+        </property>
+        <property name="widgetStyle" stdset="0">
+         <number>1</number>
+        </property>
+        <property name="svgFile">
+         <string>:/themes/flat_gray_light/pictures/pictureExample.svg</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="CDPBasePicture" name="picture_2">
+        <property name="widgetStyle" stdset="0">
+         <number>2</number>
+        </property>
+        <property name="svgFile">
+         <string>:/themes/flat_gray_light/pictures/pictureExample.svg</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="page_3"/>
+   </widget>
+   <widget class="CDPBaseButtonMsg" name="messageButton">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>120</y>
+      <width>145</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <property name="svgFile">
+     <string>:/themes/flat_gray_light/buttons/buttonPlain.svg</string>
+    </property>
+    <property name="valueToEmit">
+     <number>2</number>
+    </property>
+    <property name="pushRoutables" stdset="0">
+     <stringlist>
+      <string>cdpPressedRouting</string>
+      <string>cdpRouting</string>
+     </stringlist>
+    </property>
+    <property name="cdpProperty" stdset="0">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>CDPBaseStackedWidget</class>
+   <extends>QStackedWidget</extends>
+   <header>CDPBaseWidgets/CDPBaseStackedWidget.h</header>
+   <container>1</container>
+  </customwidget>
   <customwidget>
    <class>CDPBaseButton</class>
    <extends>QPushButton</extends>
@@ -722,5 +813,22 @@
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>messageButton</sender>
+   <signal>clicked(int)</signal>
+   <receiver>square1x1</receiver>
+   <slot>setWidgetStyle(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>491</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>512</x>
+     <y>262</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

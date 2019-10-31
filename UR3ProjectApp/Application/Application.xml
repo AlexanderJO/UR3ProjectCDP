@@ -8,7 +8,7 @@
   <OStimeInterval>120</OStimeInterval>
   <Domain>UR3Project</Domain>
 
-  <NetworkInterface Name="ETH0" MAC="" IPAddress="127.0.0.1" SubnetMask="255.255.255.255"></NetworkInterface>
+  <NetworkInterface Name="ETH0" MAC="" IPAddress="10.22.184.84" SubnetMask="255.255.254.0"></NetworkInterface>
 
   <CDPMessages>
     <TimestampLocal>1</TimestampLocal>
@@ -17,6 +17,9 @@
 
   <Subcomponents>
     <Subcomponent Name="CDP"        Model="CDP"        src="Components\CDP.xml"></Subcomponent>
+    <Subcomponent Model="ModbusIO.Wago-750-TCP" Name="Wago-750-TCP" src="Components/Wago-750-TCP.xml"></Subcomponent>
+    <Subcomponent Model="Sine" Name="Sine" src="Components/Sine.xml"></Subcomponent>
+    <Subcomponent Model="UR3Lib.Square" Name="Square" src="Components/Square.xml"></Subcomponent>
   </Subcomponents>
 
   <Signals>
