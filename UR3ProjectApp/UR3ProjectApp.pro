@@ -1,7 +1,7 @@
 TYPE = application
 PROJECTNAME = UR3ProjectApp
 
-DEPS += cdpeventmanager modbusio automation ur3lib
+DEPS += cdpeventmanager modbusio
 
 HEADERS += Libraries.h
 SOURCES += CDPMain.cpp

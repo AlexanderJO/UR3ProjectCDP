@@ -2927,7 +2927,7 @@
                    <enum>QFrame::WinPanel</enum>
                   </property>
                   <property name="currentIndex">
-                   <number>0</number>
+                   <number>1</number>
                   </property>
                   <property name="cdpPageRouting" stdset="0">
                    <string>UR3ProjectApp.ModbusMasterTCP.IO.FromPLC.Rute1.Value</string>
